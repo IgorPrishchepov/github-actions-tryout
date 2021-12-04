@@ -5,6 +5,6 @@ public class SandBoxTest {
 
     @Test
     public void test_1(){
-        Assert.assertTrue(false);
+         Assert.assertEquals(System.getenv("OUTPUT_SUFFIX"), "MySuffix");
     }
 }
