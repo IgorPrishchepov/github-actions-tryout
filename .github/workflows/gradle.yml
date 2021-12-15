@@ -9,7 +9,8 @@ on:
   pull_request:
     branches: [ main ]
 env:
-    OUTPUT_SUFFIX: MySuffix   
+    OUTPUT_SUFFIX: MySuffix
+    TESTACCOUNT_PRIVATE_KEY: '${{ secrets.TESTACCOUNT_PRIVATE_KEY }}'
 
 jobs:
     
@@ -26,6 +27,9 @@ jobs:
         cache: gradle
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
+    - name: Write testaccount file
+      run: echo $TESTACCOUNT_PRIVATE_KEY > src/test/resources/files/testaccount
     - name: Build with Gradle
-      run: ./gradlew test  
+      run: ./gradlew test
+      
      
