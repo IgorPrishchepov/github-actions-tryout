@@ -28,7 +28,7 @@ jobs:
     - name: Grant execute permission for gradlew
       run: chmod +x gradlew
     - name: Write testaccount file
-      run: echo $TESTACCOUNT_PRIVATE_KEY > src/test/resources/files/testaccount
+      run: echo $TESTACCOUNT_PRIVATE_KEY > src/test/resources/testaccount
     - name: Build with Gradle
       run: ./gradlew test
       
